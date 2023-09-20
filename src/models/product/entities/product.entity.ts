@@ -27,6 +27,12 @@ export class Product implements Prisma.ProductUncheckedCreateInput {
   picture?: string;
 
   /**
+   * Product model
+   * @example "model.stl"
+   */
+  modelUrl?: string;
+
+  /**
    * Product price not considering discounts.
    * Saved as decimal, calculations should be handled
    * with currency.js
@@ -39,11 +45,6 @@ export class Product implements Prisma.ProductUncheckedCreateInput {
    * @example 10
    */
   discountPercentage?: number;
-
-  /** Product stock amount. Defaults to 0
-   * @example 42
-   */
-  stock?: number;
 
   /**
    * Product description

@@ -40,9 +40,9 @@ model Product {
   name               String         @unique
   urlName            String         @unique
   picture            String?
+  modelUrl           String?
   basePrice          Decimal
   discountPercentage Int            @default(0)
-  stock              Int            @default(0)
   description        String?
   createdAt          DateTime       @default(now())
   categories         Category[]

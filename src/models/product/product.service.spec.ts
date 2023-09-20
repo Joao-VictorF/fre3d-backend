@@ -61,7 +61,6 @@ describe('ProductService', () => {
       name: 'Brand1 black wheelchair',
       basePrice: '80.00',
       discountPercentage: 10,
-      stock: 3,
       description: 'Black wheelchair for offices',
     });
     productArray[0].id = 'c89b0c84-281e-4995-bd2a-09e0e970d8e2';
@@ -69,7 +68,6 @@ describe('ProductService', () => {
     await productService.create({
       name: 'Brand2 black wheelchair',
       basePrice: '90.00',
-      stock: 1,
       description: 'Black wheelchair for offices',
       categories: [
         'fa244865-0878-4688-ac63-e3ecf4939a89',
@@ -83,7 +81,6 @@ describe('ProductService', () => {
       name: 'Brand1 table',
       basePrice: '50.00',
       discountPercentage: 15,
-      stock: 6,
       description: 'Table for offices',
     });
     productArray[2].id = '380379b4-a10f-49f0-9d0d-46a05794f0af';
@@ -102,7 +99,6 @@ describe('ProductService', () => {
         name: 'Brand3 black wheelchair',
         basePrice: '70.00',
         discountPercentage: 5,
-        stock: 7,
         description: 'Black wheelchair for offices',
       });
 
@@ -115,7 +111,6 @@ describe('ProductService', () => {
           urlName: 'brand3-black-wheelchair',
           basePrice: '70.00',
           discountPercentage: 5,
-          stock: 7,
           description: 'Black wheelchair for offices',
           categories: { connect: [] },
         },
@@ -128,7 +123,6 @@ describe('ProductService', () => {
         name: 'Brand3 black wheelchair',
         basePrice: '70.00',
         discountPercentage: 5,
-        stock: 7,
         description: 'Black wheelchair for offices',
         categories: [
           'fa244865-0878-4688-ac63-e3ecf4939a89',
@@ -146,7 +140,6 @@ describe('ProductService', () => {
           urlName: 'brand3-black-wheelchair',
           basePrice: '70.00',
           discountPercentage: 5,
-          stock: 7,
           description: 'Black wheelchair for offices',
           categories: {
             connect: [
@@ -228,7 +221,6 @@ describe('ProductService', () => {
           basePrice: '180.00',
           discountPercentage: 50,
           description: 'Black and orange wheelchair on promotion!',
-          stock: 10,
         },
       );
 
@@ -240,7 +232,6 @@ describe('ProductService', () => {
           basePrice: '180.00',
           discountPercentage: 50,
           description: 'Black and orange wheelchair on promotion!',
-          stock: 10,
         },
       });
 
@@ -252,7 +243,6 @@ describe('ProductService', () => {
       expect(product.description).toEqual(
         'Black and orange wheelchair on promotion!',
       );
-      expect(product.stock).toEqual(10);
     });
   });
 

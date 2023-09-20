@@ -33,24 +33,6 @@ export class PurchaseService {
         product: { connect: { id: product.productId } },
       }));
 
-    // Update the stock of each product
-    const updateStockPromises = createPurchaseDto.products.map(
-      async (product: ProductAmountDto) => {
-        const updatedProduct = await this.prisma.product.update({
-          where: { id: product.productId },
-          data: {
-            stock: {
-              decrement: product.amount ?? 1,
-            },
-          },
-        });
-        return updatedProduct;
-      },
-    );
-
-    // Execute the stock update promises
-    await Promise.all(updateStockPromises);
-
     // Create a new purchase
     const purchase = await this.prisma.purchase.create({
       data: {

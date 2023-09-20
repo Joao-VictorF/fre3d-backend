@@ -2,7 +2,6 @@ import { OmitType } from '@nestjs/swagger';
 import { Decimal } from '@prisma/client/runtime';
 import {
   IsArray,
-  IsInt,
   IsNotEmpty,
   IsNumber,
   IsOptional,
@@ -16,6 +15,7 @@ export class CreateProductDto extends OmitType(Product, [
   'createdAt',
   'urlName',
   'picture',
+  'modelUrl',
 ] as const) {
   /**
    * Product name
@@ -43,13 +43,6 @@ export class CreateProductDto extends OmitType(Product, [
   @IsOptional()
   discountPercentage?: number;
 
-  /** Product stock amount. Defaults to 0
-   * @example 42
-   */
-  @IsInt()
-  @IsOptional()
-  stock?: number;
-
   /**
    * Product description
    * @example "Black wheelchair for offices"
@@ -65,6 +58,14 @@ export class CreateProductDto extends OmitType(Product, [
   @IsString()
   @IsOptional()
   picture?: string;
+
+  /**
+   * Product 3D Model
+   * @example "https://model-3d.stl"
+   */
+  @IsString()
+  @IsOptional()
+  modelUrl?: string;
 
   /**
    * Category IDs

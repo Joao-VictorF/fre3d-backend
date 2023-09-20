@@ -34,9 +34,9 @@ CREATE TABLE "Product" (
     "name" TEXT NOT NULL,
     "urlName" TEXT NOT NULL,
     "picture" TEXT,
+    "modelUrl" TEXT,
     "basePrice" DECIMAL(65,30) NOT NULL,
     "discountPercentage" INTEGER NOT NULL DEFAULT 0,
-    "stock" INTEGER NOT NULL DEFAULT 0,
     "description" TEXT,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
