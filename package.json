@@ -36,6 +36,7 @@
     "@nestjs/platform-express": "^8.4.6",
     "@nestjs/swagger": "^5.2.1",
     "@prisma/client": "3.14.0",
+    "aws-sdk": "^2.1499.0",
     "bcrypt": "^5.0.1",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2",
@@ -57,7 +58,6 @@
     "@types/express": "^4.17.13",
     "@types/jest": "28.1.1",
     "@types/ms": "^0.7.31",
-    "@types/multer": "^1.4.7",
     "@types/node": "^17.0.40",
     "@types/passport-jwt": "^3.0.6",
     "@types/supertest": "^2.0.11",
@@ -99,8 +99,5 @@
     "moduleNameMapper": {
       "^src/(.*)$": "<rootDir>/$1"
     }
-  },
-  "resolutions": {
-    "multer": "^1.4.5-lts.1"
   }
 }
