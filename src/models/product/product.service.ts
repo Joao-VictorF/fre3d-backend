@@ -46,11 +46,24 @@ export class ProductService {
   }
 
   // Returns all products with pagination
-  async findAll({ productName = '' }: FindProductsDto): Promise<Product[]> {
+  async findAll({
+    productName = '',
+    category = '',
+  }: FindProductsDto): Promise<Product[]> {
+    const whereClause: any = {
+      name: { contains: productName, mode: 'insensitive' },
+    };
+
+    if (category) {
+      whereClause.categories = {
+        some: {
+          id: category,
+        },
+      };
+    }
+
     return this.prisma.product.findMany({
-      where: {
-        name: { contains: productName, mode: 'insensitive' },
-      },
+      where: whereClause,
       orderBy: { name: 'asc' },
       include: { categories: { select: { id: true, name: true } } },
     });

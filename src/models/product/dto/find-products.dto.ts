@@ -9,4 +9,8 @@ export class FindProductsDto {
   @IsOptional()
   @IsString()
   productName?: string;
+
+  @IsOptional()
+  @IsString()
+  category?: string;
 }
